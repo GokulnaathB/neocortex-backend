@@ -1,0 +1,58 @@
+[
+  Document {
+    pageContent: 'Benatar. Robbert Zandbergen makes a distinction between so-called reactionary (or activist)\n' +
+      'antinatalism and its more philosophical, originary counterpart. While the former seeks to limit\n' +
+      'human reproduction locally and/or temporarily, the latter seeks to end it conclusively.[9]\n' +
+      'History\n' +
+      'Early history\n' +
+      'Antinatalist sentiments have existed for thousands of years. Some of the earliest surviving\n' +
+      'formulations of the idea that it would be better not to have been born can be found in ancient',
+    metadata: {
+      source: 'C:\\Users\\Gokulnaath B\\Desktop\\pdf-rag\\server\\uploads\\1780990434594-750007414-Antinatalism.pdf',
+      page: 1,
+      loc: [Object]
+    },
+    id: '3289bfe4-517f-43c0-b689-ae146ac8c6ba'
+  },
+  Document {
+    pageContent: 'youth go by, with its easy merry-making, what hard affliction is foreign to him, what suffering does he\n' +
+      'not know? Envy, factions, strife, battles, and murders. Last of all falls to his lot old age, blamed, weak,\n' +
+      'unsociable, friendless, wherein dwells every misery among miseries\n' +
+      "The Arab philosopher al-Ma'arri expressed aninatalist sentiments throughout his life. In\n" +
+      'an elegy composed by him over the loss of a relative, he combines his grief with observations on\n' +
+      'the ephemerality of this life:',
+    metadata: {
+      source: 'C:\\Users\\Gokulnaath B\\Desktop\\pdf-rag\\server\\uploads\\1780990434594-750007414-Antinatalism.pdf',
+      page: 2,
+      loc: [Object]
+    },
+    id: '1b5b29e8-1a38-4d70-a900-34f3dfd9ded7'
+  },
+  Document {
+    pageContent: "always a harm, which is known as Benatar's asymmetry argument.\n" +
+      'Antinatalism as a philosophical concept is to be distinguished from antinatalist policies employed by\n' +
+      'some countries (governmental population control measures). In antinatalist population policy, it is\n' +
+      'not always implied that coming into existence is a universal problem and is an ever-present harm to\n' +
+      'the one whose existence was started.[11][5]',
+    metadata: {
+      source: 'C:\\Users\\Gokulnaath B\\Desktop\\pdf-rag\\server\\uploads\\1780990434594-750007414-Antinatalism.pdf',
+      page: 1,
+      loc: [Object]
+    },
+    id: '6f067162-1451-467b-bb53-f5b545058476'
+  },
+  Document {
+    pageContent: 'the ephemerality of this life:\n' +
+      "Soften your tread. Methinks the earth's surface is but bodies of the dead,\n" +
+      "Walk slowly in the air, so you do not trample on the remains of God's servants.[16]\n" +
+      `Al-Ma'arri's self-composed epitaph, on his tomb, states (in regard to life and being born): "This is my\n` +
+      `father's crime against me, which I myself committed against none."[17]\n` +
+      'From Gustave Flaubert, The Letters of Gustave Flaubert 1830–1857, 1846:',
+    metadata: {
+      source: 'C:\\Users\\Gokulnaath B\\Desktop\\pdf-rag\\server\\uploads\\1780990434594-750007414-Antinatalism.pdf',
+      page: 2,
+      loc: [Object]
+    },
+    id: 'f1bb0b38-7b02-4088-9b6d-b62b2e33eafb'
+  }
+]
