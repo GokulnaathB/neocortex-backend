@@ -26,4 +26,6 @@ app.use("/upload", uploadRouter);
 app.use("/chat", chatRouter);
 app.use("/sessions", sessionsRouter);
 
-app.listen(8000, () => console.log(`Server started on PORT:${8000}`));
+const PORT = process.env.PORT || 8000;
+
+app.listen(PORT, () => console.log(`Server started on PORT:${PORT}`));
