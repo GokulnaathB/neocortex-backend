@@ -27,11 +27,21 @@ router.post(
 
     if (event.type === "user.created") {
       const userId = event.data.id;
-      await db.insert(chatSessions).values({
-        userId,
-        title: "Your first convo",
-      });
-      // console.log("Created first session for user:", userId);
+
+      // Idempotency guard - only create if no session exists yet.
+      const existing = await db
+        .select()
+        .from(chatSessions)
+        .where(eq(chatSessions.userId, userId))
+        .limit(1);
+
+      if (existing.length === 0) {
+        await db.insert(chatSessions).values({
+          userId,
+          title: "Your first convo",
+        });
+        // console.log("Created first session for user:", userId);
+      }
     }
 
     if (existingUsers.length === 0) {
@@ -55,7 +65,7 @@ router.post(
       // console.log("Collection and indexes created.");
     }
 
-    return res.json({ received: true });
+    return res.status(200).json({ received: true });
   },
 );
 
