@@ -3,6 +3,7 @@ import { Webhook } from "svix";
 import { db } from "../index.js";
 import { chatSessions } from "../db/schema.js";
 import { client as qdrantClient } from "../config/qdrant.js";
+import { eq } from "drizzle-orm";
 
 const router = express.Router();
 
