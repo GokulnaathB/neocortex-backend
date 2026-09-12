@@ -10,10 +10,6 @@ import { rateLimiter } from "../middleware/rateLimiter.js";
 
 const router = express.Router();
 
-router.get("/test-rate-limit", rateLimiter, (req, res) => {
-  res.json({ message: "Allowed" });
-});
-
 router.post("/", rateLimiter, async (req, res) => {
   try {
     const { query, messages: history, sessionId } = req.body;
