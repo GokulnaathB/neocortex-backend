@@ -6,10 +6,15 @@ import { client as qdrantClient } from "../config/qdrant.js";
 import { db } from "../index.js";
 import { messages, sessionDocuments } from "../db/schema.js";
 import { and, desc, eq } from "drizzle-orm";
+import { rateLimiter } from "../middleware/rateLimiter.js";
 
 const router = express.Router();
 
-router.post("/", async (req, res) => {
+router.get("/test-rate-limit", rateLimiter, (req, res) => {
+  res.json({ message: "Allowed" });
+});
+
+router.post("/", rateLimiter, async (req, res) => {
   try {
     const { query, messages: history, sessionId } = req.body;
     const { userId } = getAuth(req);
@@ -88,7 +93,7 @@ router.post("/", async (req, res) => {
             },
           ],
         },
-        with_payload: true,
+        with_payload: true, // tells the database to return the attached metadata alongside the vector search results.
       });
 
       relevantChunks = results.map((r) => ({
@@ -149,7 +154,9 @@ router.post("/", async (req, res) => {
         PDF: r.metadata.source,
         page: r.metadata.page,
       }));
-      uniqueSources = [...new Map(sources.map((s) => [s.page, s])).values()];
+      uniqueSources = [
+        ...new Map(sources.map((s) => [`${s.page}-${s.PDF}`, s])).values(),
+      ];
     }
 
     const followUpPrompt = `You are a curious research assistant. Given a user's query, its answer, and the context the answer came from, generate exactly 3 short follow-up questions that:

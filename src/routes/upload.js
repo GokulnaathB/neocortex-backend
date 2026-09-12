@@ -68,6 +68,7 @@ router.post(
 
       const fileKey = `${userId}/${Date.now()}-${req.file.originalname}`;
       await uploadToR2(req.file.buffer, fileKey);
+      // A Buffer in Node.js is simply a chunk of raw binary data stored in memory (RAM).
 
       // Insert document record
       const [document] = await db
@@ -84,9 +85,7 @@ router.post(
 
       await uploadQueue.add("file-upload-queue", {
         filename: req.file.originalname,
-        // destination: req.file.destination,
         fileKey,
-        // path: req.file.path,
         userId,
         documentId: document.id,
       });

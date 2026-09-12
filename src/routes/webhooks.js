@@ -42,6 +42,8 @@ router.post(
           title: "Your first convo",
         });
         // console.log("Created first session for user:", userId);
+      } else {
+        console.log("Session for this user already exists!");
       }
     }
 

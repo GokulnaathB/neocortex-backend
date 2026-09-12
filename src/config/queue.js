@@ -10,4 +10,4 @@ export const queue = new Queue("file-upload-queue", {
   connection: redisConnection,
 }); // A queue named "file-upload-queue" is created in Valkey running on localhost:6379.
 
-await queue.obliterate({ force: true });
+// await queue.obliterate({ force: true });
